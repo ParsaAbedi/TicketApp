@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:ticket_app/screens/home_screen.dart';
+import 'package:ticket_app/screens/home/home_screen.dart';
 
 class ButtomNavBar extends StatefulWidget{
   const ButtomNavBar({Key? key}) : super(key: key);

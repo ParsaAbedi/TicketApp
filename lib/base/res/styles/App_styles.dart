@@ -8,6 +8,9 @@ class AppStyles {
   static Color ticketBlue = Color(0xFF526799);
   static Color ticketOrange = Color(0xFFF37B67);
   static Color kakiColor = Color(0xffd2bdb6);
+  static Color searchScreenWhite = Color(0xfff4f6fd);
+  static Color planeColor = Color(0xffbfc2df);
+  static Color findTicketColor = Color(0xd91130ce);
 
   static TextStyle textStyle = TextStyle(
     fontSize: 16, color: primaryColor , fontWeight: FontWeight.w500

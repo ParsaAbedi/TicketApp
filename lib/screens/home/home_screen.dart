@@ -6,7 +6,7 @@ import 'package:ticket_app/base/utils/all_json.dart';
 import 'package:ticket_app/base/utils/all_routes.dart';
 import 'package:ticket_app/base/widgets/app_double_text_widget.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
-import 'package:ticket_app/screens/widgets/hotel.dart';
+import 'package:ticket_app/screens/home/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
