@@ -89,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                   bigText: "Hotels",
                   smallText: "view all",
                   func:
-                      () {},
+                      () => Navigator.pushNamed(context, AppRoutes.allHotels),
                 ),
                 SizedBox(height:20),
                 SingleChildScrollView(

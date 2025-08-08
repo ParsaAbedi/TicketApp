@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/buttom_nav_bar.dart';
 import 'package:ticket_app/base/utils/all_routes.dart';
+import 'package:ticket_app/screens/home/all_hotels.dart';
 import 'package:ticket_app/screens/home/all_tickets.dart';
 import 'package:ticket_app/screens/search/search_screen.dart';
+import 'package:ticket_app/screens/ticket/hotel_detail.dart';
 import 'package:ticket_app/screens/ticket/ticket_screen.dart';
 void main() {
   print("Hello Dart!");
@@ -25,6 +27,14 @@ class MyApp extends StatelessWidget {
         },
         AppRoutes.ticketScreen: (context){
           return TicketScreen();
+        },
+
+        AppRoutes.allHotels: (context){
+          return AllHotelsScreen();
+        },
+
+        AppRoutes.hotelDetail: (context){
+          return HotelDetail();
         },
         
       },
