@@ -8,13 +8,14 @@ import 'package:ticket_app/base/widgets/app_double_text_widget.dart';
 import 'package:ticket_app/screens/search/widgets/app_text_icon.dart';
 import 'package:ticket_app/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:ticket_app/screens/search/widgets/find_ticket.dart';
+import 'package:ticket_app/screens/search/widgets/ticket_promotion.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
       body: ListView(
@@ -26,7 +27,7 @@ class SearchScreen extends StatelessWidget {
             style: AppStyles.headLineStyle1.copyWith(color: Colors.black),
           ),
           SizedBox(height: 20),
-          AppTicketTabs(),
+          AppTicketTabs(firstTab: "Flights", secondTab: "Hotles",),
           SizedBox(height: 25),
           AppTextIcon(
             myText: "Departure",
@@ -43,40 +44,7 @@ class SearchScreen extends StatelessWidget {
             func: () => Navigator.pushNamed(context, AppRoutes.allTickets),
           ),
           SizedBox(height: 25),
-          Row(
-            children: [
-              Container(
-                width: size.width * .42,
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                  boxShadow: [ BoxShadow(
-                    color: Colors.grey.shade200,
-                    blurRadius: 1,
-                    spreadRadius: 2,
-                  ),
-                  ]
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 190,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image:  AssetImage(
-                            AppMedia.planeSit
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
+          TicketPromotion(),
         ],
       ),
     );

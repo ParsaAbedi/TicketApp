@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:ticket_app/screens/home/home_screen.dart';
+import 'package:ticket_app/screens/search/search_screen.dart';
+import 'package:ticket_app/screens/ticket/ticket_screen.dart';
 
 class ButtomNavBar extends StatefulWidget{
   const ButtomNavBar({Key? key}) : super(key: key);
@@ -12,8 +14,8 @@ class ButtomNavBar extends StatefulWidget{
 class _ButtomNavBarState extends State<ButtomNavBar>{
   final appScreens = [
     HomeScreen(),
-    Center(child: const Text("Search")),
-    Center(child: const Text("Tickets")),
+    SearchScreen(),
+    TicketScreen(),
     Center(child: const Text("Profile"))
   ];
   int _selectedItem = 0;

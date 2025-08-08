@@ -11,6 +11,11 @@ class AppStyles {
   static Color searchScreenWhite = Color(0xfff4f6fd);
   static Color planeColor = Color(0xffbfc2df);
   static Color findTicketColor = Color(0xd91130ce);
+  static Color circleColor = Color(0xFF189999);
+  static Color ticketWhite = Colors.white;
+  static Color dotColor = Color(0xff8accf7);
+  static Color planeColor_2 = Color(0xffbaccf7);
+
 
   static TextStyle textStyle = TextStyle(
     fontSize: 16, color: primaryColor , fontWeight: FontWeight.w500
