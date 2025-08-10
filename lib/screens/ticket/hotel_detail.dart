@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/App_styles.dart';
 import 'package:ticket_app/base/utils/all_json.dart';
+import 'package:ticket_app/screens/ticket/widgets/expandable_text.dart';
 
 class HotelDetail extends StatefulWidget {
   const HotelDetail({super.key});
@@ -28,9 +29,60 @@ class _HotelDetailState extends State<HotelDetail> {
             expandedHeight: 300.0,
             floating: false,
             pinned: true,
+            leading: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppStyles.primaryColor,
+                  ),
+                  child: Icon(Icons.arrow_back,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
             flexibleSpace: FlexibleSpaceBar(
-              title: Text("Hotel"),
-              background: Image.asset("assets/images/${hotelList[hotelIndex]["image"]}"),
+              background: Stack(
+                children: [
+                  Positioned.fill(
+                  child: Image.asset("assets/images/${hotelList[hotelIndex]["image"]}",
+                    fit: BoxFit.cover,
+                  ),
+                  
+                ),
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5)
+                    ),
+                    child: Text(hotelList[hotelIndex]["place"],
+                      style: TextStyle(color: Colors.white, 
+                      fontSize: 24.0,
+                      shadows: [
+                        Shadow(
+                          blurRadius: 10.0,
+                          color: AppStyles.primaryColor,
+                          offset: Offset(2.0, 2.0)
+                        )
+                      ]),
+                      
+                    ),
+                    
+                  ),
+                )
+                ]
+              ),
+              
             ),
           ),
           SliverList(delegate: SliverChildListDelegate(
@@ -38,7 +90,7 @@ class _HotelDetailState extends State<HotelDetail> {
 
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("Hi this is just a dummy text to fill the screen and make this app more beatiful! later on critics can add their own comments here too! Wish you luck", style: AppStyles.headLineStyle3,),
+                  child: ExpandableText(text: "Hi this is just a dummy text to fill the screen and make this app more beatiful! later on critics can add their own comments here too! Wish you luck"),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
