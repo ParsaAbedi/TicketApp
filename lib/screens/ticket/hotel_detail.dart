@@ -90,7 +90,7 @@ class _HotelDetailState extends State<HotelDetail> {
 
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ExpandableText(text: "Hi this is just a dummy text to fill the screen and make this app more beatiful! later on critics can add their own comments here too! Wish you luck"),
+                  child: ExpandableText(text: hotelList[hotelIndex]['detail']),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -100,11 +100,13 @@ class _HotelDetailState extends State<HotelDetail> {
                   height: 200,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 10,
-                    itemBuilder:(contect, index){
+                    itemCount: hotelList[hotelIndex]["images"].length,
+                    itemBuilder:(contect, imaegIndex){
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Image.network("https://via.placeholder.com/200x150"),
+                        child: Image.asset(
+                          "assets/images/${hotelList[hotelIndex]["images"][imaegIndex]}"
+                        ),
                       );
                     }  ,
                   ),

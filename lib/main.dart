@@ -36,6 +36,8 @@ class MyApp extends StatelessWidget {
         AppRoutes.hotelDetail: (context){
           return HotelDetail();
         },
+
+        
         
       },
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:ticket_app/screens/home/home_screen.dart';
+import 'package:ticket_app/screens/profile/profile_screen.dart';
 import 'package:ticket_app/screens/search/search_screen.dart';
 import 'package:ticket_app/screens/ticket/ticket_screen.dart';
 
@@ -12,12 +13,14 @@ class ButtomNavBar extends StatefulWidget{
 }
 
 class _ButtomNavBarState extends State<ButtomNavBar>{
+  
   final appScreens = [
     HomeScreen(),
     SearchScreen(),
     TicketScreen(),
-    Center(child: const Text("Profile"))
+    ProfileScreen(),
   ];
+
   int _selectedItem = 0;
   void _changeItem(int index){
     setState(() {
